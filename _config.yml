@@ -1,7 +1,7 @@
 # Site wide configuration
 
-title: Kevin Site
-locale: en_US
+title: Tech & Life
+locale: en_CN
 #url: http://localhost:4000
 url: http://kevinsu917.github.io
 
@@ -31,22 +31,22 @@ kramdown:
 owner:
   name: Kevin Su
   avatar: bio-photo.png
-  bio: "make your life cool"
+  bio: "patience, persevere, and enjoy"
   email: kevinsu917@gmail.com
-  disqus-shortname: charliegriefer-github-io 
-  twitter: charliegriefer
+  disqus-shortname: kevinsu917-github-io 
+  twitter:
   facebook: 
   google:
     plus: 
-    analytics: UA-53448619-1
+    analytics:
     verify: 
     ad-client: 
     ad-slot: 
     show-google-ads: false
   bing-verify: 
-  github: charliegriefer
-  stackoverflow: charliegriefer
-  linkedin: charliegriefer
+  github: kevinsu917
+  stackoverflow: 3924947/kevinsu917
+  linkedin:
   instagram: 
   lastfm:
   tumblr:
