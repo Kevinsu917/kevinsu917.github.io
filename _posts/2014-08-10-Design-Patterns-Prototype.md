@@ -18,4 +18,4 @@ comments: true
 而像数组、引用对象、容器对象等都不会进行深拷贝。举个例子，当a2是通过a1拷贝过来，a2中的非深拷贝字段会因为a1的修改而修改。所以需要另行拷贝。
 
 
-> [参考]（http://home.cnblogs.com/group/topic/13210.html）
+> [参考](http://home.cnblogs.com/group/topic/13210.html)
