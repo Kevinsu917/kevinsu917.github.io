@@ -16,9 +16,9 @@ comments: true
 让我们的代码更加，可维护、可阅读、可扩展
 
 *Gof的设计模式*共有23条，下表罗列了书中所有的模式：
-![Alt text](http://localhost:4000/images/dp/partten_chart1.png)
+![Alt text]({{ site.url }}/images/dp/partten_chart1.png)
 
 在实际开发的时候，通常需要混合的使用各种模式，而不是单一的使用某一个，所以，这就需要我们充分理解当时的场合，以及模式之间的关系，如何结合使用。
 下表是模式之间的关系：
 
-![Alt text](http://localhost:4000/images/dp/partten_chart2.png)
+![Alt text]({{ site.url }}/images/dp/partten_chart2.png)
