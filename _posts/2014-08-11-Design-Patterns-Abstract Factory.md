@@ -28,10 +28,11 @@ Client只需要通过调用工厂里面的方法就可以创建一个族的一�
 ![Alt text]({{ site.url }}/images/dp/partten_chart5.png)
 
 --- 
-**相关实现：**
+**相关实现：**  
 >[javax.xml.parsers.DocumentBuilderFactory#newInstance()][DocumentBuilderFactory]
 [javax.xml.transform.TransformerFactory#newInstance()][TransformerFactory]
 [javax.xml.xpath.XPathFactory#newInstance()][XPathFactory]
+
 
 [DocumentBuilderFactory]: http://docs.oracle.com/javase/6/docs/api/javax/xml/parsers/DocumentBuilderFactory.html#newInstance%28%29
 [TransformerFactory]: http://docs.oracle.com/javase/6/docs/api/javax/xml/transform/TransformerFactory.html#newInstance%28%29

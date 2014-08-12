@@ -2,7 +2,7 @@
 
 title: Tech & Life
 locale: en_CN
-#git url: http://localhost:4000
+#url: http://localhost:4000
 url: http://kevinsu917.github.io
 
 
@@ -11,8 +11,15 @@ url: http://kevinsu917.github.io
 # permalink: /:categories/:title/
 permalink: pretty
 markdown: redcarpet
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
 #highlighter: pygments
-highlighter: rouge 
+highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
