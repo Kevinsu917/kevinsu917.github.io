@@ -11,8 +11,8 @@ comments: true
 1. 用工厂方法提供对象
 2. 提供的是一组对象
 
-**目的：**
-* 洪湖对如何生成对象的过程不可见
+**目的：**  
+*客户对如何生成对象的过程不可见
 
 抽象工厂模式可以向客户端提供一个接口，使得客户在不必要指定产品具体类型的情况下，   
 创建多个产品族中的产品对象。   
@@ -32,8 +32,6 @@ Client只需要通过调用工厂里面的方法就可以创建一个族的一�
 >[javax.xml.parsers.DocumentBuilderFactory#newInstance()][DocumentBuilderFactory]
 [javax.xml.transform.TransformerFactory#newInstance()][TransformerFactory]
 [javax.xml.xpath.XPathFactory#newInstance()][XPathFactory]
-
-222222222
 
 [DocumentBuilderFactory]: http://docs.oracle.com/javase/6/docs/api/javax/xml/parsers/DocumentBuilderFactory.html#newInstance%28%29
 [TransformerFactory]: http://docs.oracle.com/javase/6/docs/api/javax/xml/transform/TransformerFactory.html#newInstance%28%29
