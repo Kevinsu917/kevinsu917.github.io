@@ -10,9 +10,9 @@ url: http://kevinsu917.github.io
 
 # permalink: /:categories/:title/
 permalink: pretty
-markdown: redcarpet
-#highlighter: pygments
-highlighter: rouge
+markdown: kramdown
+highlighter: pygments
+# highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
