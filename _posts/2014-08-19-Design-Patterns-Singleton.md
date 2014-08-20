@@ -13,7 +13,7 @@ comments: true
 普通的单例模式：
 因为不能让Client能有通过构造方法来获取实例，所有需要把构造函数私有化。
 
-{% gist 4d7b978ce9e04cd53555 [https://gist.github.com/4d7b978ce9e04cd53555.git] %}
+<script src="https://gist.github.com/Kevinsu917/94d2c9899e8335b7eaca"></script>
 
 但是，普通的单例模式，在面对多线程的操作下，就会出现问题。
 当多个线程同时调用getInstance方法是，就很有可能获取多个实例，这违背了单例模式的意图。所以，这个时候我们就需要加锁。
