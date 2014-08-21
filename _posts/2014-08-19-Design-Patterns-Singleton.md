@@ -13,18 +13,74 @@ comments: true
 普通的单例模式：
 因为不能让Client能有通过构造方法来获取实例，所有需要把构造函数私有化。
 
-<script src="https://gist.github.com/Kevinsu917/94d2c9899e8335b7eaca"></script>
+```java
+		class Singleton
+			{
+				private Singleton instance;
+				private Singleton(){}
+				public Singleton getInstance()
+				{
+					if(instance == null)
+					{
+						instance = new Singleton();
+					}
+					return instance;
+				}
+			
+			}
+```
+
 
 但是，普通的单例模式，在面对多线程的操作下，就会出现问题。
 当多个线程同时调用getInstance方法是，就很有可能获取多个实例，这违背了单例模式的意图。所以，这个时候我们就需要加锁。
 
-{% gist e33790db3e249e11be77 [https://gist.github.com/e33790db3e249e11be77.git] %}
+```java
+		class Singleton
+		{
+			private Singleton instance;
+			private static readonly object lockHelper = new Object();*锁实例*
+			private Singleton(){}
+			public Singleton getInstance()
+			{		
+				lock(lockHelper)
+				{
+					if(instance == null)
+					{
+						instance = new Singleton();
+					}
+					return instance;
+				}
+			}
+		}
+```
+
 
 这样就可以避免同时进入初始化的过程，不会再获取多个实例，但是，这又导致每次调用getInstance方法的时候
 需要锁上该方法，影响效率，所以再在外面加一个判断，来避免这个问题。
 
-
-{% gist 94d2c9899e8335b7eaca [https://gist.github.com/e33790db3e249e11be77.git] %}
+```java
+	 class Singleton
+		{
+			private Singleton instance;
+			private static readonly object lockHelper = new Object();*锁实例*
+			private Singleton(){}
+			public Singleton getInstance()
+			{		
+				if(instance == null)
+				{
+					lock(lockHelper)
+					{
+						if(instance == null)
+						{
+							instance = new Singleton();
+						}
+						return instance;
+					}
+				}
+			}
+		
+		}
+```
 
 这样，就只会在第一次初始化的时候加锁。
 
