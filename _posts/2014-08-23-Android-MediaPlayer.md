@@ -11,7 +11,7 @@ comments: true
 关于音频、视频播放，是Andorid应用中常见的功能。音频只需要设置源即可播放，视频还需要View来播放。
 **MediaPlayer**类是用来播放音频/视频文件和流的。
 **状态图**：
-![Alt text](./1408796523668.png)
+![Alt text]({{ site.url }}/images/mediaplayer/1408796523668.png)
 为了能够正常的播放，必须搞清楚各种状态。不然就会抛各种的异常。
 图中，
 * 椭圆表示MediaPlayer对象的状态。
@@ -73,7 +73,7 @@ stop()方法可以从Started, Paused, Prepared or PlaybackCompleted 转变成Sto
 ---
 想要调整播放的位置，可以通过seekTo(int)方法。这是一个异步方法。所以你调整完，需要一段时间才能完成。可以注册OnSeekComplete接口。等待回调。 Prepared, Paused and PlaybackCompleted这些状态下都可以调用。
 ###嵌套的类
-![Alt text](./1408800704728.png)
+![Alt text]({{ site.url }}/images/mediaplayer/1408800704728.png)
 
 
 ####工程中的一个语音播放工具类
