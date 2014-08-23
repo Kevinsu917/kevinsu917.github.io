@@ -41,7 +41,8 @@ Activity的生命周期，对于开发人员来说是极其重要的。
 ####Declaring the activity in the manifest在Manifest中定义Activity：
 
 每一个Activity都必必须在Manifest文件中定义，例如：
-```
+
+```java
 <manifest ... >
   <application ... >
 <activity android:name=".ExampleActivity" android:icon="@drawable/app_icon">
@@ -75,7 +76,8 @@ Starting an activity for a result开始一个Activity并返回结果：
 有时候​，你启动一个新的Activity并希望获取回复的结果。在这种情况下，
 可以通过**startActivityForResult()**方法代替startActivity()，当完成后，会通过Intent返回一个Intent到你本身的onActivityResult()回调函数上。
 例如，也许你系那个用户选取一个他们的联系人，然后你对这个联系人做一些操作，那么你可以这样做：
-```
+
+```java
 private void pickContact() {
     // Create an intent to "pick" a contact, as defined by the content provider URI
     Intent intent = new Intent(Intent.ACTION_PICK, Contacts.CONTENT_URI);
@@ -128,6 +130,7 @@ Activity中的CallBack方法
 我们可以通过onSaveInstanceState()方法：
 系统会在Activity被销毁时调用onSaveInstanceState()，系统会传给这个方法一个参数 Bundle，通过这个参数可以给我们保存数据。当原来的Activity被reCreate时，传递给onCreate()和onRestoreInstanceState()方法。
 通过这个两个方法其中之一，你可以恢复到之前的状态，如果没有状态信息需要恢复，那么将传递一个null值（例如第一次创建）。
+
 ![Alt text]({{ site.url }}/images/activity/1408771756500.png)
 
 注意：在销毁你的Activity前不一定会执行onSaveInstanceState()方法，因为有可能根本没必要保存状态（用户自己通过返回键退出，显性的想退出应用），如果系统调用onSaveInstanceState()方法,那么会在onStop()方法之前甚至会在onPause()。
