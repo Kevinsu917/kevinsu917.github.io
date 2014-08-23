@@ -3,7 +3,7 @@ layout: post
 title: Design Patterns Singleton
 description: "单例模式"
 
-tags: [Design Patterns]
+tags: ["Design Patterns"]
 comments: true
 ---
 ###单例模式-Singleton

@@ -3,7 +3,7 @@ layout: post
 title: Design Patterns Abstract Factory
 description: "抽象工厂模式"
 
-tags: [Design Patterns]
+tags: ["Design Patterns"]
 comments: true
 ---
 ###抽象工厂-Abstract Factory

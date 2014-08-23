@@ -3,7 +3,7 @@ layout: post
 title: Android Plan
 description: "Android 计划"
 
-tags: [Android Plan]
+tags: ["Android","Plan"]
 comments: true
 ---
 ###One year plan about Android

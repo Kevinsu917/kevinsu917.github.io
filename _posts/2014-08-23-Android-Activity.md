@@ -3,7 +3,7 @@ layout: post
 title: Android Activity
 description: "Android Activity"
 
-tags: [Android Component]
+tags: ["Android"]
 comments: true
 ---
 ####Activity介绍

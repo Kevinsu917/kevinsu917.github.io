@@ -3,7 +3,7 @@ layout: post
 title: Design Patterns Start
 description: "My Design patterns start"
 
-tags: [Design Patterns]
+tags: ["Design Patterns", "Plan"]
 comments: true
 ---
 

@@ -3,7 +3,7 @@ layout: post
 title: Start
 description: "My first Jekyll post."
 
-tags: [start]
+tags: ["Plan"]
 comments: true
 ---
 

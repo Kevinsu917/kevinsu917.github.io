@@ -3,7 +3,7 @@ layout: post
 title: Design Patterns Prototype
 description: "原型模式"
 
-tags: [Design Patterns]
+tags: ["Design Patterns"]
 comments: true
 ---
 ###原型模式-Prototype
