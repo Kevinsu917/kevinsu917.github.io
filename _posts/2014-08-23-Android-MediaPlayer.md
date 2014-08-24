@@ -8,56 +8,56 @@ comments: true
 ---
 
 ###MediaPlayer
-关于音频、视频播放，是Andorid应用中常见的功能。音频只需要设置源即可播放，视频还需要View来播放。
-**MediaPlayer**类是用来播放音频/视频文件和流的。
-**状态图**：
-![Alt text]({{ site.url }}/images/mediaplayer/1408796523668.png)
-为了能够正常的播放，必须搞清楚各种状态。不然就会抛各种的异常。
-图中，
-* 椭圆表示MediaPlayer对象的状态。
-* 线条代表状态的转换操作。带单箭头的表示同步方法调用的；两个箭头的表示异步方法调用。
-通过图，我们看到一个MediaPlayer对象有以下几种状态：
-1. Idle 初始状态
-2. Initialized 已经初始化状态
-3. Preparing 准备中状态
-3. Prepared 已经准备好状态
-4. Started 已经开始播放状态
-5. Paused 已经暂停状态——就像我们mp3的暂停，可以通过开始，**接着播放**
-6. Stopped 已经停止状态——就像我们mp3的停止，可以通过开始，**重头播放**
-7. PlaybackCompleted 已经播放完成状态
-8. End 结束状态
-9. Error 出错状态
+关于音频、视频播放，是Andorid应用中常见的功能。音频只需要设置源即可播放，视频还需要View来播放。         
+**MediaPlayer**类是用来播放音频/视频文件和流的。     
+**状态图**：          
+![Alt text]({{ site.url }}/images/mediaplayer/1408796523668.png)            
+为了能够正常的播放，必须搞清楚各种状态。不然就会抛各种的异常。 
+图中，            
+* 椭圆表示MediaPlayer对象的状态。           
+* 线条代表状态的转换操作。带单箭头的表示同步方法调用的；两个箭头的表示异步方法调用。              
+通过图，我们看到一个MediaPlayer对象有以下几种状态：              
+1. Idle 初始状态  
+2. Initialized 已经初始化状态     
+3. Preparing 准备中状态     
+3. Prepared 已经准备好状态     
+4. Started 已经开始播放状态      
+5. Paused 已经暂停状态——就像我们mp3的暂停，可以通过开始，**接着播放**            
+6. Stopped 已经停止状态——就像我们mp3的停止，可以通过开始，**重头播放**             
+7. PlaybackCompleted 已经播放完成状态             
+8. End 结束状态             
+9. Error 出错状态             
 
 在MediaPlayer刚刚通过new或者reset()后，它处于Idle状态；而在release()后，它处于End状态。在这两个状态之间，就是MediaPlayer的生命周期。
 * 上面我们说到Idle的状态可以通过**新构建new**或者**重置reset()**得到，但是，两者还是有细微的差别。
-处于Idle状态下，调用以下方法都会出错：
-    * getCurrentPosition()
-    * getDuration()
-    * getVideoHeight()
-    * getVideoWidth()
-    * setAudioStreamType(int)
-    * setLooping(boolean)
-    * setVolume(float, float)
-    * pause()
-    * start()
-    * stop()
-    * seekTo(int)
-    * prepare()
-    * prepareAsync()
+处于Idle状态下，调用以下方法都会出错：      
+    * getCurrentPosition()     
+    * getDuration()      
+    * getVideoHeight()              
+    * getVideoWidth()           
+    * setAudioStreamType(int)           
+    * setLooping(boolean)           
+    * setVolume(float, float)             
+    * pause()          
+    * start()          
+    * stop()           
+    * seekTo(int)           
+    * prepare()          
+    * prepareAsync()        
 如果这些方法在MediaPlayer刚刚被构建的时候调用，系统不会去调用OnErrorListener.OnError()回调方法，同时，Idle状态不会被改变。
-而如果是在reset()后调用，就会回调到OnErrorListener.OnError()方法，而且状态会改为Error.
+而如果是在reset()后调用，就会回调到OnErrorListener.OnError()方法，而且状态会改为Error.        
 
 * MediaPlayer有一个重要的原则，当不需要使用MediaPlayer时候，应当马上调用release()方法释放资源。这个时候状态会变成End，而且再也不能到达其他的状态。
 
-* 通过create()方法得到MediaPlayer不是处于Idle状态，而是Prepared状态。
+* 通过create()方法得到MediaPlayer不是处于Idle状态，而是Prepared状态。      
 
-通常，很多播放的操作都会因为各种原因而失败。例如播放不支持的格式源、分辨率过高、获取源超时等等。通过注册错误监听器setOnErrorLinstener()可以很好的反馈告诉我们为什么播放失败，同时做异常处理。通常是在某个状态下调用了错误的方法导致的。当MediaPlayer处于Error状态的情况下，可以通过reset方法重置成Idle状态。
+通常，很多播放的操作都会因为各种原因而失败。例如播放不支持的格式源、分辨率过高、获取源超时等等。通过注册错误监听器setOnErrorLinstener()可以很好的反馈告诉我们为什么播放失败，同时做异常处理。通常是在某个状态下调用了错误的方法导致的。当MediaPlayer处于Error状态的情况下，可以通过reset方法重置成Idle状态。   
 
 ---
 
-要播放一个资源，必须处于Prepared状态下，否者会抛异常。
-* 有两个方法可以转变成这个状态。（同步)prepare()方法；（异步）prepareAsync()方法。成功后，都会调用OnPrepared()方法（OnPreparedListener接口）。
-* Preparing状态是一个临时的状态，在MediaPlayer中并没有定义。
+要播放一个资源，必须处于Prepared状态下，否者会抛异常。      
+* 有两个方法可以转变成这个状态。（同步)prepare()方法；（异步）prepareAsync()方法。成功后，都会调用OnPrepared()方法（OnPreparedListener接口）。       
+* Preparing状态是一个临时的状态，在MediaPlayer中并没有定义。           
 
 ---
 
