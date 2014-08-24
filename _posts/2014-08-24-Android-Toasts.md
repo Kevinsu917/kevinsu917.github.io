@@ -27,7 +27,8 @@ toast.show();
 ####创建自定义的ToastView
 可以把自定义的布局文件通过setView(View)方法设置给toast。
 布局文件toast_layout.xml
-```xml
+
+```java
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:id="@+id/toast_layout_root"
               android:orientation="horizontal"
@@ -48,8 +49,10 @@ toast.show();
               />
 </LinearLayout>
 ```
+
 代码：
-```
+
+```java
 LayoutInflater inflater = getLayoutInflater();
 View layout = inflater.inflate(R.layout.custom_toast,
                                (ViewGroup) findViewById(R.id.toast_layout_root));
@@ -63,5 +66,6 @@ toast.setDuration(Toast.LENGTH_LONG);
 toast.setView(layout);
 toast.show();
 ```
+
 先把xml渲染成一个view，再把View设置给toast。
-**Note：通常不用new的构建方式来实例化，除非你想用自己的布局文件t**
+**Note：通常不用new的构建方式来实例化，除非你想用自己的布局文件。**
