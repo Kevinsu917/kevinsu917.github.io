@@ -22,7 +22,7 @@ comments: true
 3. Menus ActionBar Settings Dialogs Notifications Toasts Search DragAndDrop StylesAnd Themes CustomComponents ProgressBar SurfaceView
 
 ####四大组件
-1. Activity Service ContentResolver BroadCastReceiver
+1. Activity Service ContentProvider BroadCastReceiver
 2. Intent IntentFilter Manifest/Permission attrs.xml Task/AsyncTask Handler
 3. 进阶：进程间通信 AIDL/Message
 
