@@ -11,13 +11,13 @@ url: http://kevinsu917.github.io
 # permalink: /:categories/:title/
 permalink: pretty
 markdown: redcarpet
-highlighter: null
+highlighter: pygments
 #highlighter: rouge
 sass:
   sass_dir: _sass
   style: compressed
-gems:
-  - jekyll-sitemap
+#gems:
+#  - jekyll-sitemap
 
 redcarpet:
   extensions: []
