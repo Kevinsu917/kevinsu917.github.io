@@ -11,15 +11,20 @@ comments: true
 桥接模式做得事情就是把抽象定义的部分与实现内容的部分分离。
 
 ![Alt text]({{ site.url }}/images/dp/bridge_chart1.png)
-为了加多一个IconWindow的需要加一个Xwindow下的IconWindow，在PMIconWindow下的IconWindow。
 
-![Alt text]({{ site.url }}/images/dp/bridge_chart2.png)
-所以可以把实现抽离出来，通过接口调用对应的实现。
+为了加多一个IconWindow的需要加一个Xwindow下的IconWindow，在PMIconWindow下的IconWindow。   
 
-[桥接的结构图]
+![Alt text]({{ site.url }}/images/dp/bridge_chart2.png)  
+
+所以可以把实现抽离出来，通过接口调用对应的实现。   
+
+
+[桥接的结构图]   
+
 ![Alt text]({{ site.url }}/images/dp/bridge_chart3.png)
 
-[桥接的代码实现]
+[桥接的代码实现]  
+
 
 ```java
 class Abstraction
