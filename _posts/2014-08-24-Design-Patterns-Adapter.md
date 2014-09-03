@@ -8,7 +8,9 @@ comments: true
 ---
 ###Adapter-适配器模式
 讲到适配器模式，先上两张图表明适配器想做得是什么。
-![Alt text]({{ site.url }}/images/dp/1408865303102.png)![Alt text]({{ site.url }}/images/dp/1408865317850.png)![Alt text](./1408865333259.png)
+![Alt text]({{ site.url }}/images/dp/1408865303102.png)
+![Alt text]({{ site.url }}/images/dp/1408865317850.png)
+![Alt text](({{ site.url }}/images/dp/1408865333259.png)
 ![Alt text]({{ site.url }}/images/dp/1408865463006.png)
 
 这个产品号称全球通用转换插座。也就是，你带着它，到那个国家去，不管人家的插座标准是怎样，都能帮你转过去，想想都带感啊。
