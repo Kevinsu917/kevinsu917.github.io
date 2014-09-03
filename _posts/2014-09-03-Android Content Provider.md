@@ -26,8 +26,7 @@ Note：你不需要关注数据来源本地，还是来源于web上。
 ####Contact Provider
 首先，我们通过联系人Provider的例子来了认识Provider。Contact Provider就是Contact Application这个Android内置应用提供给我们获取它数据的Provider。
 
-![Alt text]({{ site.url }}/images/contentProvider/chart1.png)
-![Alt text]({{ site.url }}/images/contentProvider/chart2.png)
+![Alt text]({{ site.url }}/images/contentProvider/chart1.png)![Alt text]({{ site.url }}/images/contentProvider/chart2.png)
 
 
 Contact Provider把联系人分为三个表来管理：    
