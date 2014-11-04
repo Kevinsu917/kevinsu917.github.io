@@ -7,8 +7,6 @@ tags: ["Android,IAround"]
 comments: true
 ---  
 
-###ScollView嵌套EditText导致的冲突[转载]
-
 EditText设置maxLines之后，文本行数超过maxLines，会网上折叠，上下滑动可以浏览所有文本。
 
 若EditText外层有scrollView，在EditText上下滑动，不会像正常情况那样上，只会滑动了scrollView。
@@ -16,7 +14,7 @@ EditText设置maxLines之后，文本行数超过maxLines，会网上折叠，�
 ####前提是ScrollView嵌套TextView
 **解决办法是：**
 
-//处于TextView的点击域时,直接消费touch事件,不传递给ScrollView
+//处于TextView的点击域时,直接消费touch事件,不传递给ScrollView  
 //etTextContent是EditText
 
 ```
