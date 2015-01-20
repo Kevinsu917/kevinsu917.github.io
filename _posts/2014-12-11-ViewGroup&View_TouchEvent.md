@@ -60,4 +60,32 @@ dispatchTouchEvent -> onTouchEvent
 [参考1](http://bbs.csdn.net/topics/370144745)  
 [参考2](http://blog.csdn.net/android_tutor/article/details/7193090)
 
+###2015.1.20新增
+
+因为最近实现类似微信的表情,长按某个表情,会弹出一个窗口,且显示该表情的动态图,滑动到另外一个表情时,显示另外一个表情的动图.  
+
+这里其实是一个ScrollView中嵌套GridView,然后长按GridView中某个Item(ImageView)时,通过一个Popwindow去显示Item中的动图.这里上下滑动的时候,会导致和ScrollView的滑动出现冲突.这里解决其实很简单,只要在onInterceptTouchEvent方法(拦截取消)就好了
+
+对于TouchEvent的更多理解:  
+之前讲得都是点击试讲向下传递的问题,那么下层的View对点击事件处理之后,那么上层的View如何获得点击事件呢?
+
+在这里:我们假设A为外层的View,B为嵌套在A中的内层View.  (都是GroupView)
+
+1. 如果B的onTouch方法返回true,也就是消费了点击事件.  
+那么B的onTouchEvent方法就不会被调用.  
+
+2. 如果在A不拦截点击事件(onInterceptTouchEvent事件返回false).且B不消费点击事件(onTouch和onTouchEvent都返回false)的情况下.  
+那么A才会调用onTouchEvent事件,否则不会.  
+
+**总结:**View通过dispatchTouchEvent方法向下传递touch事件,(ViewGroup)通过onInterceptTouchEvent来拦截,通过onTouch和onTouchEvent来判断是否消费,如果不消费向上传递.
+
+
+问题1: 我们在实现onTouchListener中onTouch事件和onTouchEvent方法的区别?
+
+在我的理解,onTouchEvent是在View中实现的,在实现这个View的时候,通用的touch事件由我们来控制.但是这时候别人用你这个View的时候,不一定能够满足他的需求,所以就需要通过实现onTouchListener中的onTouch方法来实现特殊的需求
+
+[StackOverFlow 上的一个解释](http://stackoverflow.com/questions/5002049/ontouchevent-vs-ontouch)
+
+[验证的Demo](https://github.com/Kevinsu917/TouchEventDemo/)
+
 
