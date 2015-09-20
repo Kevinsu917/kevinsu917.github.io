@@ -111,3 +111,29 @@ public static class FragmentA extends ListFragment {
 ####6.对比Activity与Fragment的生命周期
 ![Alt text]({{ site.url }}/images/fragment/activity_fragment_lifecycle.png)  
 
+
+
+**********
+### 2015.9.20   
+新项目中需要做类似课程表的一个功能,就这个问题让我纠结了一段时间.主要还是对fragment以及viewpager的东西不是太熟的缘故,现在写一写Fragment的一些新的认识.  
+
+首先先给出一篇不错的关于Fragment的解析的文章 [**GO**](http://blog.csdn.net/lmj623565791/article/details/37970961)  
+
+1. 第一个问题,对于fragment的动态使用,一定少不了使用FragmentTransaction,通过其中的方法来做操作.那么就需要认清,其中的(add&remove)方法,replace,(attach&detach)方法的区别.  
+
+  	* 当使用的是replace的时候,假如有被替换掉的fragment的时候,被替换掉的fragment会一直到调用onDetach方法,也就是整个fragment会和activity的关联取消掉.所以这个时候在被onDetach后的fragment中,是无法通过getActivity()来获取到关联的activity的.且在fragmentManager中没有维护被onDetach的fragment,整个实例都被销毁掉.
+  	* 当使用的是add的时候,通过hide和show来开关fragment,而不改变fragment中的状态.
+  	* 当使用的事attach和detach的方法时,走的是oncreateView和onDestroyView之间的生命周期,同时,因为没有走onDetach,所以还会保留在fragmentManager中管理.只是销毁其中的视图.
+  
+2. 第二个问题,关于获取fragment的引用,如果是定义好的fragment再动态add进去的fragmentManager的话,这个引用很容易就获取到.
+
+ 	* 原本在activity就定义了fragme nt的引用
+ 	* 在fragmentManager中通过findVFragmentByid或者findFragmentByTag.或者直接fragmentManager.getFragments来获取管理的list
+ 
+3. 关于fragment和activity的通信或者fragment和fragment通信,建议用过在fragment中定义接口来实现.因为,这样,fragment就可以和activity解耦,不用必须是哪个activity才能与该fragment配合使用.
+
+4. Fragment在很多情况下都与ViewPager结合用.所以对于FragmentPagerAdapter和FragmentStatePagerAdapter这个两个类用的就非常的多.区别在于:
+	* FragmentPagerAdapter:对于不需要的fragment,选择调用detach方法,仅销毁视图,不销毁fragment的实例
+	* FragmentStatePagerAdapter:会销毁不再需要的fragment,会彻底的将fragment从当前的fragmentManager中移除.state表明,销毁时,会将其onSaveInstanceState中的bundle信息保存下来,当用户切换回来的时候,可以通过该bundle恢复生产新的fragment.
+ 
+ 
