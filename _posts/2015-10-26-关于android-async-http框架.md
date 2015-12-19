@@ -7,8 +7,6 @@ tags: ["Android"]
 comments: true
 ---
 
-### 关于android-async-http框架
-
 **简介:**  
 这个框架是基于Apache的HttpClient库开发的一个异步回调的Http Client.所有的请求都不是在UI线程上的.但是所有回调的逻辑都是通过Android Handler来传递,你也可以用于Service或者background thread,这个库将自动识别context.
 
