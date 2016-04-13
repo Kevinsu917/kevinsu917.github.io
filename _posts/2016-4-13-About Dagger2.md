@@ -34,6 +34,7 @@ class A{
 ```
 
 假如我们有一个出行的需求,我们准备出行,但是我们可以有多种出行的交通方式.
+
 ```java
 定义一个出行的方式接口:
 public interface Vehicle{
@@ -71,6 +72,7 @@ public class Me{
 现在大致了解Dagger2是要干嘛.至于如何通过Android Studio去添加其中的使用方式.[参考](http://codethink.me/2015/08/06/dependency-injection-with-dagger-2/)
 
 把上面的例子通过Dagger实现:  
+
 ```Java
 public class Car implements Vehicle{
   void go(){
