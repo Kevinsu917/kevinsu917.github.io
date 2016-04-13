@@ -19,8 +19,6 @@ sass:
 #gems:
 #  - jekyll-sitemap
 
-relative_permalinks: true
-
 redcarpet:
   extensions: []
 
