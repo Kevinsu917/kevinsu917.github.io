@@ -73,7 +73,7 @@ public class Me{
 
 把上面的例子通过Dagger实现:  
 
-```Java
+```java
 public class Car implements Vehicle{
   void go(){
     //我们开车去
@@ -107,6 +107,7 @@ public class Me{
   }
 }
 ```
+
 以上就是最简单的Dagger2的例子了.从上面看,我们用到了几个注解.
 首先要明确,Dagger2的工作原理,是通过注解生成对应代码(注意一定是有注解,才会有生成的对应的代码),让我们只需要关注我们需要的,让Dagger2帮我们生成一些我们不关注的代码,如果Factory工厂类的代码.   
 以下三个
