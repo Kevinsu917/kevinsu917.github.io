@@ -11,7 +11,7 @@ url: http://kevinsu917.github.io
 # permalink: /:categories/:title/
 permalink: pretty
 markdown: redcarpet
-highlighter: pygments
+highlighter: rouge
 #highlighter: rouge
 sass:
   sass_dir: _sass
@@ -36,21 +36,21 @@ owner:
   avatar: bio-photo.png
   bio: "patience, persevere, and enjoy"
   email: kevinsu917@gmail.com
-  disqus-shortname: kevinsu917-github-io 
+  disqus-shortname: kevinsu917-github-io
   twitter:
-  facebook: 
+  facebook:
   google:
-    plus: 
+    plus:
     analytics:
-    verify: 
-    ad-client: 
-    ad-slot: 
+    verify:
+    ad-client:
+    ad-slot:
     show-google-ads: false
-  bing-verify: 
+  bing-verify:
   github: kevinsu917
   stackoverflow: 3924947/kevinsu917
   linkedin:
-  instagram: 
+  instagram:
   lastfm:
   tumblr:
   pinterest:

@@ -17,6 +17,7 @@ Dagger2是一种依赖注入的框架.那么第一个概念就是,什么叫做�
 
 这里我简单介绍一下依赖注入.依赖的意思:   
 ```Java
+
 class A{
    B b;
 }
@@ -32,6 +33,7 @@ class A{
 
 假如我们有一个出行的需求,我们准备出行,但是我们可以有多种出行的交通方式.
 ```Java
+
 定义一个出行的方式接口:
 public interface Vehicle{
     void go();
@@ -122,3 +124,5 @@ public class Me{
 ![XMind]({{ site.url }}/images/dagger.png)
 
 @Component之所以是连接@Module和@Inject的理由,是因为会生成一个DaggerXXComponent,该类通过提供一些列的Provider<T>对象(这些Provider对应@Module中的@Provides)对@Inject注解的对象进行注入,这样就可以对需要注入的对象进行初始化.
+
+### 关于Scope
