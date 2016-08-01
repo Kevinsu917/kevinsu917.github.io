@@ -1,4 +1,12 @@
-### About RxJava
+---
+layout: post
+title: About Rxjava
+description: Rxjava
+
+tags: ["Android"]
+comments: true
+---
+
 
 ##定义:
 以**类观察者模式**实现链式编程的一种技术.  
