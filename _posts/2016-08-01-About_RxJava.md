@@ -138,6 +138,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 #### 5. 异常处理
 
 **catch**  
+
 * *onErrorReturn*: 遇到Error后,返回一个数据源  
 * *onErrorResumeNext*: 遇到Error后,返回一个新的Observable  
 * *onExceptionResumeNext*: 和onErrorResumeNext一样, 但是只有遇到Exception才处理  
