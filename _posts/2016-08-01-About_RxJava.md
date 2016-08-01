@@ -8,7 +8,7 @@ comments: true
 ---
 
 
-##定义:
+## 定义:
 以**类观察者模式**实现链式编程的一种技术.  
 Rxjava最基本的两个概念:Observables(被观察者, 事件源)和Subscribes(观察者, 订阅者).流程由Observables发出一系列事件,然后交由给Subscribes来处理.
 
@@ -87,7 +87,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 *其实操作符的根本都是更改create方法中OnSubscribe中的call方法*  
 
 
-####1. 创建一个新的Observable  
+#### 1. 创建一个新的Observable  
 
 * *create*: 通过实现OnSubscribe接口来实现  
 * *defer*: 延迟创建Observable, 只有在subscriber的时候才创建  
@@ -101,7 +101,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 总体来说,简单的创建Observable还是非常简单的.但是要根据实际情况选择哪种创建方式,就需要对每个操作符更加熟悉,才能做到顺手拈来
 
 
-####2. 变换Observable,在实际情况有可能需要的Observable的类型是不同的,这个时候可以通过变换的操作符来处理
+#### 2. 变换Observable,在实际情况有可能需要的Observable的类型是不同的,这个时候可以通过变换的操作符来处理
 
 * *buffer*: 把多个数据源分成一定数量的array  
 * *window*: 与**buffer**类似,只是分成的是Observable对象  
@@ -111,7 +111,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 * *scan*: 遍历Observable产生的结果,把结果作为下次参数
 
 
-####3. 过滤功能.假如我们在数据源中,发现不符合条件的数据,可以直接通过过滤类型的操作符直接剔除
+#### 3. 过滤功能.假如我们在数据源中,发现不符合条件的数据,可以直接通过过滤类型的操作符直接剔除
 
 * *debounce*: 防止抖动,在持续规定的时间范围内,没有别的数据加入,就把最后一个数据发送出去  
 * *distinct*: 过滤重复的数据  
@@ -126,7 +126,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 * *take*: 和skip相反,只去开头n个数据源  
 * *takeLast*: 和skipLast相反,只去结尾n个数据源  
 
-####4. combine功能, 结合多个数据源
+#### 4. combine功能, 结合多个数据源
 
 * *combineLatest*: 两个Observable每次发出数据,找另外一个Observable最近发出的数据,结合在一起  
 * *join*: 和combineLatest一样,但是可以控制两个Observable的生命周期  
@@ -135,7 +135,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 * *switchNext*: 这个有点复杂,需要理解Observable中的数据是多个Observable,而每一个子Observable也有多个数据源,每当下一个父Observable发射出去,上一个子Observable没有完成的话,就停止继续发送.由新的子Observable继续发送  
 * *testZip*: 把两个Observable发出的数据源一一按照Func的条件结合输出.输出的数量按照两个Observable中少的处理  
 
-####5. 异常处理
+#### 5. 异常处理
 
 **catch**  
 * *onErrorReturn*: 遇到Error后,返回一个数据源  
@@ -144,7 +144,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 * *retry*: 遇到异常情况可以不断重复,也可以设置重复的次数,还可以设置重复的条件,例如遇到参数异常才retry  
 * *retryWhen*: 遇到Error的情况,把Error包装成Observable,如果这个新的Observable可以正常运行,那么运行完重新订阅原来的Observable,继续运行,如果新的Observable不能正常运行,则运行OnError  
 
-####6. 实用操作
+#### 6. 实用操作
 
 * *delay*: 延迟多久执行  
 **do系列:**
@@ -159,7 +159,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 * *timeOut*: 如果在制定间隔内没有数据发出,也没有执行onComplete,那么就会执行onError  
 * *using*:  Using操作符创建一个在Observable生命周期内存活的资源，也可以这样理解：我们创建一个资源并使用它，用一个Observable来限制这个资源的使用时间，当这个Observable终止的时候，这个资源就会被销毁。
 
-####6. 条件操作
+#### 7. 条件操作
 
 * *all*: 判断所有数据源是否满足条件   
 * *amb*: 判断多个Observable,哪个先发射,就取哪个的数据  
@@ -172,7 +172,7 @@ public final Subscription subscribe(final Action1<? super T> onNext, final Actio
 * *TakeWhile*: 使用数据,当满足条件的时候  
 
 
-##Single:
+## Single:
 Single其实就是类似于Observable.  
 
 * 只是Observable可以发射出一系列的数据,但是Single只能发出一个数据.  
@@ -180,7 +180,7 @@ Single其实就是类似于Observable.
 * 另外就是Single的操作符返回的基本上是Single对象...除了个别通过两个Single组合成Observable的方法
 
 
-##Subject:
+## Subject:
 Subject既可以看做是Observable,也可以看做是Observer.   
 
 * Subject有onNext,onError,onComplete方法,就想Observer一样  
@@ -314,7 +314,7 @@ Subject既可以看做是Observable,也可以看做是Observer.
 
 ```
 
-##Scheduler
+## Scheduler
 主要是控制操作所在的线程..通过subscribeOn和observerOn方法来控制.
 
 * Schedulers.io()
