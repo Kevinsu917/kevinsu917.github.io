@@ -20,7 +20,7 @@ comments: true
 
 在启动以上三种组件的时候,带上Intent对象,因为Intent中可以携带而外的信息,所以当启动新的组件的时候,可以获取Intent中的信息,起到消息传递的功能.当然不只这个功能.请看下面的图:
 
-![]({{ site.url }}/images/intent.png)
+![]({{ site.url }}/images/base_review/intent.png)
 
 从图中可以看出,通过startActivity启动新的Activity,其实是先通过系统去过滤,然后系统分析Intent,知道你到底要开启哪个Activity.当然你可能只想打开某个网站,那么系统就会去找能打开某个网站的app供你选择.这就引出了Intent的显式和隐式两种类型.
 
