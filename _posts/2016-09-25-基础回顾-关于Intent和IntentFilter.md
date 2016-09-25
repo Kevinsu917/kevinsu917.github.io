@@ -46,6 +46,7 @@ Intent中包括了ComponentName, Action, Data, Category, Extra, Flag这些信息
 
 以下代码表示如果有多个选择的时候,必须提供选择列表,即使用户已经选择了默认使用哪个app打开.
 另外就是通过resolveActivity方法判断是否有可以处理的activity.
+
 ```
 Intent sendIntent = new Intent(Intent.ACTION_SEND);
 String title = getResources().getString(R.string.chooser_title);
